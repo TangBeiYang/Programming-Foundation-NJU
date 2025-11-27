@@ -2,5 +2,5 @@
 
 > Learning Records Starting from Double Pointers | Continuously Updating
 
-##Chapters Currently Being Studied
+## Chapters Currently Being Studied
 - **Double Pointers**
