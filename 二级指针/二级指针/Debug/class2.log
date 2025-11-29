@@ -1,0 +1,5 @@
+﻿  二级指针.cpp
+E:\source\repos\class2\class2\二级指针.cpp(30,5): warning C4101: “p”: 未引用的局部变量
+E:\source\repos\class2\class2\二级指针.cpp(31,7): warning C4101: “q”: 未引用的局部变量
+E:\source\repos\class2\class2\二级指针.cpp(32,7): warning C4101: “r”: 未引用的局部变量
+  class2.vcxproj -> E:\source\repos\class2\Debug\class2.exe
