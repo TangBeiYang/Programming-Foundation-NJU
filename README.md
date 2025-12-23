@@ -4,3 +4,4 @@
 
 ## Chapters Currently Being Studied
 - **Double Pointers**
+- **Strings**
