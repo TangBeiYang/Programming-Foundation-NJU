@@ -125,14 +125,11 @@ Node* DeleteNode(Node* head, int i) {
         delete current;           // 释放删除节点的空间
     } else {
         Node* previous = head;    // previous指向头节点
-        int j = 1;
-        
-        // 查找第i-1个节点
+        int j = 1       // 查找第i-1个节点
         while(j < i-1 && previous->next != NULL) {
             previous = previous->next;
             j++;
         }
-        
         if(previous->next != NULL) {  // 存在第i个节点
             Node* current = previous->next;  // current指向第i个节点
             previous->next = current->next;  // 连接前后节点
@@ -147,19 +144,16 @@ Node* DeleteNode(Node* head, int i) {
 // 4.2 删除最后一个节点
 Node* DeleteLastNode(Node* head) {
     Node* previous = NULL, *current = head;
-    
     // 查找最后一个节点
     while(current->next != NULL) {
         previous = current;
         current = current->next;
     }
-    
     if(previous != NULL) {       // 存在倒数第二个节点
         previous->next = NULL;   // 断开最后一个节点
     } else {                     // 链表中只有一个节点
         head = NULL;             // 链表置空
     }
-    
     delete current;              // 释放删除节点的空间
     return head;                 // 返回更新后的头指针
 }
@@ -174,7 +168,6 @@ void PrintList(Node* head) {
         cout << "List is empty." << endl;
         return;
     }
-    
     Node* p = head;
     while(p != NULL) {           // 遍历所有节点
         cout << p->data << " ";
@@ -201,10 +194,8 @@ Node* ListSort(Node* head) {
     if(head == NULL || head->next == NULL) {
         return head;            // 空链表或只有一个节点直接返回
     }
-    
     Node* cur = head->next;     // 从第二个节点开始
     head->next = NULL;          // 将头节点脱离，作为已排序队列
-    
     while(cur != NULL) {        // 将后面的节点依次插入已排序队列
         Node* prev = cur;
         cur = cur->next;
@@ -219,16 +210,13 @@ Node* ListSortInsert(Node* head, Node* p) {
         p->next = head;
         return p;               // 返回新的头节点
     }
-    
     Node* cur = head;
     Node* prev = NULL;
-    
     // 查找合适的插入位置
     while(cur != NULL && p->data >= cur->data) {
         prev = cur;
         cur = cur->next;
     }
-    
     // 插入到prev和cur之间
     p->next = prev->next;
     prev->next = p;
