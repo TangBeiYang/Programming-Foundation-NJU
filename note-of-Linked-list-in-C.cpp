@@ -327,3 +327,35 @@ ListNode* reverse(ListNode* cur){
     }
     return pre;
 }
+//链表排序
+struct yfy {
+	int n;
+	struct yfy* pnext;
+};
+void swap_yfy(struct yfy* pre, struct yfy* a) {
+	struct yfy* b = a->pnext;
+	struct yfy* b_next = b->pnext;
+	pre->pnext = a->pnext;
+	b->pnext = a;
+	a->pnext = b_next;
+}
+void sort_yfy(struct yfy* phead) {
+	if (!phead || !phead->pnext) return;
+	bool flag = 1;
+	yfy* end = 0;
+	while (flag) {
+		flag = 0;
+		yfy* pre = phead;
+		yfy* cur = pre->pnext;
+		while (cur->pnext) {
+			if (cur->n > cur->pnext->n) {
+				swap_yfy(pre, cur);
+				flag = 1;
+				cur = pre->pnext;
+			}
+			pre = cur;
+			cur = pre->pnext;
+		}	
+		end = cur;
+	}
+}
