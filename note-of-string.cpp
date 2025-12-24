@@ -232,3 +232,6 @@ sort(names.begin(), names.end());  // 默认字典序排序
 sort(names.begin(), names.end(), [](const string& a, const string& b) {
     return a.length() < b.length();  // 按长度排序
 });
+//输出vector定义的字符数组
+vector<char>a={'a','b','\0'};
+cout << a.data() << endl;
