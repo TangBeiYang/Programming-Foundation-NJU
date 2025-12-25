@@ -344,18 +344,18 @@ void sort_yfy(struct yfy* phead) {
 	bool flag = 1;
 	yfy* end = 0;
 	while (flag) {
-		flag = 0;
+		flag = 0;                    //flag保存是否有序
 		yfy* pre = phead;
 		yfy* cur = pre->pnext;
 		while (cur->pnext) {
 			if (cur->n > cur->pnext->n) {
 				swap_yfy(pre, cur);
 				flag = 1;
-				cur = pre->pnext;
+				cur = pre->pnext;    //容易忘
 			}
 			pre = cur;
 			cur = pre->pnext;
 		}	
-		end = cur;
+		end = cur;                   //便于维护，也可不写
 	}
 }
