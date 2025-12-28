@@ -154,18 +154,15 @@ int BiSearch(char x[], char k, int ph, int pt) {
     int pmid;
     while (ph <= pt) {
         pmid = (ph + pt) / 2;  // 计算中间位置
-        
+        //pmid = ph + (pt - ph)/2 //这样写可保证ph与pt较大时也不会溢出
         if (k == x[pmid])       // 找到目标
-            break;
+            return pmid;
         else if (k > x[pmid])   // 目标在右半区
             ph = pmid + 1;
         else                    // 目标在左半区
             pt = pmid - 1;
     }
-    // 判断查找结果
-    if (ph > pt)
-        pmid = -1;  // 未找到
-    return pmid;
+    return -1;
 }
 //===== 2. 递归版本 =====
 // 参数：x[]-有序字符数组, k-目标字符, ph-区间起点, pt-区间终点
