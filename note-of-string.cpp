@@ -202,7 +202,7 @@ strcmp("work", "worker") = -'e';   // 字符串结束符 < 'e'
 //===== 2. 冒泡排序法 =====
 void bubble_sort_strings(char* arr[], int n) {
     for (int i = 0; i < n - 1; i++) {
-        bool swapped = false;
+        bool swapped = false;  //此处处理方法与后面链表排序的处理方法类似
         
         for (int j = 0; j < n - i - 1; j++) {
             if (strcmp(arr[j], arr[j + 1]) > 0) {
